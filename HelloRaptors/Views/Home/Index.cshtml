@@ -16,5 +16,18 @@
     <br>
     Was signed by the Toronto Raptors on : @Model.ArrivalDate.ToLongDateString();
 
+
+    @*With razor zou can reference server side variables from c# by simply prefixing them with an at-character*@
+
+    <p>Welcome to our Toronto Raptors Site... current date is
+    @DateTime.Now.ToShortDateString();
+    </p>
+
+    @if (DateTime.Now.Year < 2021)
+    {
+        <span>The Year is 2020</span>
+    }
+
+
 </body>
 </html>
