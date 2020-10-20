@@ -10,9 +10,9 @@ namespace HelloRaptors.Controllers
     {
         public IActionResult Index()
         {
-            //return View();
+            return View();
 
-            return Content("Hello Toronto Raptors");
+            //return Content("Hello Toronto Raptors");
         }
     }
 }
