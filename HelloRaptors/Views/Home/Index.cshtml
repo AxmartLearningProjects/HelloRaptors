@@ -28,6 +28,135 @@
         <span>The Year is 2020</span>
     }
 
+<br />
+
+    @{ 
+
+        var name = "Balazs Jager";
+
+
+    }
+
+
+    Hello, @(name.Substring(0, 5)). Your age is : <b>@(10 + 27)</b>
+    <br />
+
+    @{ 
+        var helloW = "<b>Wellcome</b>";
+    }
+
+<p>@helloW</p>
+<p>@Html.Raw(helloW)</p>
+
+
+
+    @{ 
+
+        int sum = 32 + 10;
+        string greeting = "Hello World";
+        string text = "";
+        text += greeting + "The result is : " + sum.ToString();
+
+    }
+
+    <h2>Code Block Example</h2>
+    Text: @text
+
+    @{ 
+
+        string msg = "Good Day";
+        if (DateTime.Now.Hour > 17)
+        {
+            msg = "Good Evening";
+        }
+
+        msg += " , world!";
+
+        msg = msg.ToUpper();
+
+    }
+
+    <div>
+        @msg
+    </div>
+
+    <br />
+
+    @if (DateTime.Now.Year >= 2021)
+    {
+        <p>Happy new year</p>
+    }else 
+    {
+        <p>We are still waiting for the year of 2021</p>
+    }
+
+<br />
+
+    @{ 
+        List<string> names = new List<string>()
+        {
+            "Kyle Lowry",
+            "Pascal Siakim",
+            "Fred VanVleet",
+            "OG Anunoby",
+            "Marc Gasol"
+        };
+
+    }
+
+
+<ul>
+    @for (int i = 0; i < names.Count; i++)
+    {
+        <li>@names[i]</li>
+    }
+
+</ul>
+
+<ul>
+    @foreach (var n in names)
+    {
+        <li>@n</li>
+    }
+</ul>
+
+<ul>
+    @{int counter = 0; } 
+    @while (counter < names.Count)
+    {
+        <li>@names[counter++]</li>
+    }
+</ul>
+
+    @{List<string> friends = new List<string>()
+        {
+          "Bob",
+          "Rob",
+          "Norbert",
+          "Zalan"
+        };
+
+        List<int> friendsAge = new List<int>()
+        {
+            24,
+            43,
+            33,
+            26
+        };
+
+      }
+
+<ul>
+    @for (int i = 0; i < friends.Count; i++)
+    {
+        if (friendsAge[i]>30)
+        {
+            <li>@friends[i]</li>
+        }
+    }
+
+</ul>
+
 
 </body>
 </html>
