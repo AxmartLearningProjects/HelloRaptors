@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,5 +16,16 @@ namespace HelloRaptors.Controllers
 
             return View(player);
         }
+
+        [HttpGet]
+        public IActionResult Edit()
+        {
+
+
+            return Content("Edit");
+        }
+
+
+
     }
 }
