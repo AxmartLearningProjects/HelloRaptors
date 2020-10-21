@@ -44,7 +44,18 @@ namespace HelloRaptors.Controllers
         [HttpPost]
         public IActionResult SimpleBinding(Player raptor)
         {
-            return Content(raptor.PlayerName+" updated");
+            if (ModelState.IsValid)
+            {
+                return Content(raptor.PlayerName + " updated");
+            }
+            else
+            {
+                return View(raptor);
+            }
+            
+            
+            
+            
         }
 
     }
