@@ -1,36 +1,29 @@
 ﻿@model HelloRaptors.Models.Raptors
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Raptors</title>
-</head>
-<body>
-
-    <h2>The Toronto Raptors</h2>
-
-    @*Here we are referencing our view located in the shared folder 
-        When the View is rendered the content of the Partial View is
-        automaticly injected into the place where you called the PartialAsync() method
-        mixing in with the rest of the View. Notice that we didn't have to specify a complete
-        filename and path for the Partial View. The Shared folder is automatically 
-        searched during the View discovery process*@
-
-    @await Html.PartialAsync("_RaptorHello")
 
 
-    <br />
-    <b>@Model.PlayerName</b>
-    <br>
+<h2>The Toronto Raptors</h2>
+
+@*Here we are referencing our view located in the shared folder
+    When the View is rendered the content of the Partial View is
+    automaticly injected into the place where you called the PartialAsync() method
+    mixing in with the rest of the View. Notice that we didn't have to specify a complete
+    filename and path for the Partial View. The Shared folder is automatically
+    searched during the View discovery process*@
+
+@await Html.PartialAsync("_RaptorHello")
+
+
+
+
+<br />
+<b>@Model.PlayerName</b>
+<br>
     Was signed by the Toronto Raptors on : @Model.ArrivalDate.ToLongDateString();
 
 
 
 
-</body>
-</html>
