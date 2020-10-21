@@ -1,0 +1,31 @@
+﻿@model HelloRaptors.Models.Player
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SimpleBinding</title>
+</head>
+<body>
+
+    @using (var form = Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(m => m.PlayerName)
+            @Html.TextBoxFor(m => m.PlayerName)
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.Position)
+            @Html.TextBoxFor(m => m.Position)
+        </div>
+
+        <input type="submit" value="Submit" />
+    }
+
+</body>
+</html>
