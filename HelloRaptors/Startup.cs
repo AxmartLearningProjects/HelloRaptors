@@ -29,8 +29,9 @@ namespace HelloRaptors
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvcWithDefaultRoute();
 
+            app.UseMvc(routes => routes.MapRoute("Product", "{controller=Product}/{action=Details}"));
+            app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) => 
             {
