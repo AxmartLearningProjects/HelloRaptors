@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using HelloRaptors.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace HelloRaptors.Controllers
 {
@@ -56,6 +57,23 @@ namespace HelloRaptors.Controllers
             
             
             
+        }
+
+
+        public IActionResult QueryTest()
+        {
+
+            string name = "Paskal Siakim";
+
+            if (!String.IsNullOrEmpty(HttpContext.Request.Query["name"]))
+            {
+
+                name = HttpContext.Request.Query["name"];
+
+            }
+
+            return Content("Name from query string is " + name);
+
         }
 
     }
