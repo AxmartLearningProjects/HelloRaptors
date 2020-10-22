@@ -30,7 +30,7 @@ namespace HelloRaptors
             }
 
 
-            app.UseMvc(routes => routes.MapRoute("Default", "{controller=Home}/{action=SimpleBinding}"));
+            app.UseMvc(routes => routes.MapRoute("Default", "{controller=Home}/{action=index}"));
             app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) => 

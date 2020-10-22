@@ -16,7 +16,26 @@ namespace HelloRaptors.Controllers
 
             Models.Raptors player = new Models.Raptors() { PlayerName = "Kyle Lowry", ArrivalDate = new DateTime(2012,3,24) };
 
-            return View(player);
+            //return View(player);
+
+
+            CookieOptions cookieOptions = new CookieOptions();
+            cookieOptions.Expires = new DateTimeOffset(DateTime.Now.AddDays(7));
+
+            if (!HttpContext.Request.Cookies.ContainsKey("first_Request"))
+            {
+                HttpContext.Response.Cookies.Append("first_Request", DateTime.Now.ToString(), cookieOptions);
+                return Content("Wellcome new visitor");
+            }
+            else
+            {
+                DateTime firstRequest = DateTime.Parse(HttpContext.Request.Cookies["first_Request"]);
+
+                return Content("Wellcome back user! You first visited us on " + firstRequest.ToString());
+            }
+
+
+            
         }
 
         [HttpGet]
